@@ -2,16 +2,16 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/<language>:<version TAG>
+      - image: circleci/java:8
     steps:
       - checkout
-      - run: <command>
+      - run: mvn build
   test:
     docker:
-      - image: circleci/<language>:<version TAG>
+      - image: circleci/java:8
     steps:
       - checkout
-      - run: <command>
+      - run: mvn test
 workflows:
   version: 2
   build_and_test:
